@@ -59,6 +59,20 @@ const MentorshipSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Altura do navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section id="mentoria" className="py-24 bg-secondary/30">
       <div className="container mx-auto">
@@ -143,9 +157,9 @@ const MentorshipSection = () => {
               variant="hero"
               size="lg"
               className="text-base px-10 py-6 mt-4"
-              asChild
+              onClick={() => scrollToSection("contato")}
             >
-              <a href="#contato">Quero Fazer Parte</a>
+              Quero Fazer Parte
             </Button>
           </div>
         </div>

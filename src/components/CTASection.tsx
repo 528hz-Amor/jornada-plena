@@ -28,6 +28,17 @@ const CTASection = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Ajuste para o navbar fixo
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="contato"
@@ -86,9 +97,13 @@ const CTASection = () => {
             variant="warmOutline"
             size="lg"
             className="text-base px-12 py-7"
-            asChild
           >
-            <a href="#mentoria">Saiba Mais Sobre a Mentoria</a>
+            <button
+              onClick={() => scrollToSection("mentoria")}
+              className="w-full"
+            >
+              Saiba Mais Sobre a Mentoria
+            </button>
           </Button>
         </div>
 

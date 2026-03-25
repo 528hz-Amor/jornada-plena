@@ -26,31 +26,54 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Ajuste para o navbar fixo
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <footer className="py-12 bg-foreground">
       <div className="container mx-auto text-center space-y-4">
-        <a
-          href="#inicio"
+        <button
+          onClick={() => scrollToSection("inicio")}
           className="scroll-reveal font-display text-2xl font-semibold text-primary-foreground tracking-wide"
         >
           Vida <span className="text-primary">Lirica</span>
-        </a>
+        </button>
         <p className="scroll-reveal text-sm font-body text-primary-foreground/60">
           🏵️ Corpo • Mente • Emoção • Espírito
         </p>
         <div className="scroll-reveal flex justify-center gap-6 text-sm font-body text-primary-foreground/50">
-          <a href="#sobre" className="hover:text-primary transition-colors">
+          <button
+            onClick={() => scrollToSection("sobre")}
+            className="hover:text-primary transition-colors"
+          >
             Sobre
-          </a>
-          <a href="#mentoria" className="hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("mentoria")}
+            className="hover:text-primary transition-colors"
+          >
             Mentoria
-          </a>
-          <a href="#blog" className="hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("blog")}
+            className="hover:text-primary transition-colors"
+          >
             Blog
-          </a>
-          <a href="#contato" className="hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("contato")}
+            className="hover:text-primary transition-colors"
+          >
             Contato
-          </a>
+          </button>
         </div>
         <p className="scroll-reveal text-xs font-body text-primary-foreground/40 pt-4">
           © {new Date().getFullYear()} Vida Lirica. Todos os direitos

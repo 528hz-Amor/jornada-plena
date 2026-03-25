@@ -28,6 +28,17 @@ const HeroSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Ajuste para o navbar fixo
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="inicio"
@@ -70,21 +81,25 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button
-              variant="hero"
-              size="lg"
-              className="text-base px-10 py-6"
-              asChild
-            >
-              <a href="#contato">Iniciar Minha Jornada</a>
+            <Button variant="hero" size="lg" className="text-base px-10 py-6">
+              <button
+                onClick={() => scrollToSection("contato")}
+                className="w-full"
+              >
+                Iniciar Minha Jornada
+              </button>
             </Button>
             <Button
               variant="warmOutline"
               size="lg"
               className="text-base px-10 py-6"
-              asChild
             >
-              <a href="#sobre">Conheça o Método</a>
+              <button
+                onClick={() => scrollToSection("sobre")}
+                className="w-full"
+              >
+                Conheça o Método
+              </button>
             </Button>
           </div>
         </div>

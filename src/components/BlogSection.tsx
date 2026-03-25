@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const posts = [
   {
+    id: "sinais-conexao-consigo",
     category: "Autoconhecimento",
     title: "5 sinais de que você perdeu a conexão consigo mesma",
     excerpt:
@@ -10,6 +12,7 @@ const posts = [
     date: "15 Mar 2026",
   },
   {
+    id: "sagrado-feminino-vida-moderna",
     category: "Espiritualidade",
     title: "O poder do sagrado feminino na vida moderna",
     excerpt:
@@ -17,6 +20,7 @@ const posts = [
     date: "08 Mar 2026",
   },
   {
+    id: "rituais-matinais-energia",
     category: "Autocuidado",
     title: "Rituais matinais que transformam sua energia",
     excerpt:
@@ -24,6 +28,7 @@ const posts = [
     date: "01 Mar 2026",
   },
   {
+    id: "vulnerabilidade-como-forca",
     category: "Reflexão",
     title: "Vulnerabilidade como força: aprendendo a sentir",
     excerpt:
@@ -77,9 +82,10 @@ const BlogSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {posts.map((post, index) => (
-            <article
+            <Link
               key={index}
-              className="scroll-reveal group bg-background rounded-2xl overflow-hidden border border-border/50 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer"
+              to={`/blog/${post.id}`}
+              className="scroll-reveal group bg-background rounded-2xl overflow-hidden border border-border/50 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer block"
             >
               <div className="h-2 bg-primary/20 group-hover:bg-primary/40 transition-colors duration-500" />
               <div className="p-6 space-y-4">
@@ -99,7 +105,7 @@ const BlogSection = () => {
                   <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
