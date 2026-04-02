@@ -1,46 +1,15 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-
-const posts = [
-  {
-    id: "sinais-conexao-consigo",
-    category: "Autoconhecimento",
-    title: "5 sinais de que você perdeu a conexão consigo mesma",
-    excerpt:
-      "Muitas mulheres vivem no automático sem perceber que estão distantes de quem realmente são. Descubra os sinais e como voltar para si.",
-    date: "15 Mar 2026",
-  },
-  {
-    id: "sagrado-feminino-vida-moderna",
-    category: "Espiritualidade",
-    title: "O poder do sagrado feminino na vida moderna",
-    excerpt:
-      "Como resgatar a sabedoria ancestral feminina e integrá-la ao seu dia a dia, encontrando equilíbrio entre o moderno e o sagrado.",
-    date: "08 Mar 2026",
-  },
-  {
-    id: "rituais-matinais-energia",
-    category: "Autocuidado",
-    title: "Rituais matinais que transformam sua energia",
-    excerpt:
-      "Pequenas práticas diárias podem mudar completamente a forma como você se sente. Conheça rituais simples e poderosos para começar bem o dia.",
-    date: "01 Mar 2026",
-  },
-  {
-    id: "vulnerabilidade-como-forca",
-    category: "Reflexão",
-    title: "Vulnerabilidade como força: aprendendo a sentir",
-    excerpt:
-      "Ser vulnerável não é fraqueza. Descubra como abraçar suas emoções pode ser o caminho mais corajoso para uma vida plena.",
-    date: "22 Fev 2026",
-  },
-];
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ArrowRight, Calendar, Tag, ArrowLeft } from "lucide-react";
+import { posts } from "@/lib/blog-data";
 
 const BlogSection = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isFullPage = location.pathname === "/blog";
+
   useEffect(() => {
-    const revealItems =
-      document.querySelectorAll<HTMLElement>(".scroll-reveal");
+    const revealItems = document.querySelectorAll<HTMLElement>(".scroll-reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -52,7 +21,7 @@ const BlogSection = () => {
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.1 },
     );
 
     revealItems.forEach((item) => {
@@ -61,48 +30,95 @@ const BlogSection = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
+
+  const handleBackToHome = () => {
+    navigate("/");
+    setTimeout(() => {
+      const element = document.getElementById("blog");
+      if (element) {
+        const offsetTop = element.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
+
+  const displayPosts = isFullPage ? posts : posts.slice(0, 4);
 
   return (
-    <section id="blog" className="py-24 bg-secondary/30">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="scroll-reveal text-sm font-body uppercase tracking-[0.3em] text-primary mb-4">
-            Conteúdo & Reflexões
-          </p>
-          <h2 className="scroll-reveal text-3xl md:text-5xl font-display font-light text-foreground mb-6">
-            Inspirações para sua{" "}
-            <span className="italic font-semibold text-primary">jornada</span>
-          </h2>
-          <p className="scroll-reveal text-base font-body text-muted-foreground leading-relaxed">
-            Artigos, reflexões e práticas para nutrir sua alma e iluminar seu
-            caminho.
-          </p>
+    <section id="blog" className={`py-24 md:py-32 bg-transparent relative overflow-hidden ${isFullPage ? 'pt-40' : ''}`}>
+      <div className="container mx-auto px-4 relative z-10">
+        {isFullPage && (
+          <button
+            onClick={handleBackToHome}
+            className="inline-flex items-center gap-2 text-primary font-body font-bold hover:gap-3 transition-all mb-12 group"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Voltar para sessão blog do início
+          </button>
+        )}
+
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div className="max-w-2xl">
+            <p className="scroll-reveal text-sm font-body uppercase tracking-[0.4em] text-primary mb-4 font-bold">
+              Conteúdo & Reflexões
+            </p>
+            <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground leading-tight">
+              {isFullPage ? "Todos os nossos artigos" : "Inspirações para sua jornada interior"}
+            </h2>
+          </div>
+          {!isFullPage && (
+            <div className="scroll-reveal">
+              <Link to="/blog" className="group flex items-center gap-2 text-primary font-body font-bold hover:gap-4 transition-all duration-300">
+                Ver todos os artigos
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          )}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {posts.map((post, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {displayPosts.map((post, index) => (
             <Link
               key={index}
               to={`/blog/${post.id}`}
-              className="scroll-reveal group bg-background rounded-2xl overflow-hidden border border-border/50 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer block"
+              state={{ from: location.pathname }}
+              className="scroll-reveal group flex flex-col h-full bg-white/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="h-2 bg-primary/20 group-hover:bg-primary/40 transition-colors duration-500" />
-              <div className="p-6 space-y-4">
-                <span className="text-xs font-body uppercase tracking-wider text-primary font-medium">
-                  {post.category}
-                </span>
-                <h3 className="text-lg font-display font-semibold text-foreground leading-snug group-hover:text-primary transition-colors duration-300">
+              <div className="relative h-64 overflow-hidden bg-primary/5">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-body font-bold uppercase tracking-wider text-primary shadow-sm">
+                    <Tag className="w-3 h-3" />
+                    {post.category}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex items-center gap-2 text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-4">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {post.date}
+                </div>
+
+                <h3 className="text-xl font-display font-bold text-foreground leading-tight mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-sm font-body text-muted-foreground leading-relaxed line-clamp-3">
+
+                <p className="text-sm font-body text-muted-foreground leading-relaxed line-clamp-3 mb-6 flex-grow">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center justify-between pt-2">
-                  <span className="text-xs font-body text-muted-foreground">
-                    {post.date}
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <div className="pt-4 border-t border-primary/5 flex items-center text-primary text-[10px] font-bold uppercase tracking-widest gap-2 group-hover:gap-4 transition-all duration-300">
+                  Ler artigo completo
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
             </Link>

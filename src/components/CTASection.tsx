@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import mandala from "@/assets/mandala-decoration.png";
+import { MessageCircle, FormInput, Sparkles } from "lucide-react";
 
 const CTASection = () => {
   useEffect(() => {
-    const revealItems =
-      document.querySelectorAll<HTMLElement>(".scroll-reveal");
+    const revealItems = document.querySelectorAll<HTMLElement>(".scroll-reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,88 +27,63 @@ const CTASection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 80; // Ajuste para o navbar fixo
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
-    <section
-      id="contato"
-      className="py-24 bg-primary/5 relative overflow-hidden"
-    >
-      <img
-        src={mandala}
-        alt=""
-        className="absolute -left-20 -bottom-20 w-60 h-60 opacity-10 animate-float"
-        loading="lazy"
-        width={800}
-        height={800}
-      />
-      <img
-        src={mandala}
-        alt=""
-        className="absolute -right-20 -top-20 w-48 h-48 opacity-5"
-        loading="lazy"
-        width={800}
-        height={800}
-      />
-
-      <div className="container mx-auto text-center max-w-3xl relative z-10">
-        <p className="scroll-reveal text-sm font-body uppercase tracking-[0.3em] text-primary mb-4">
+    <section id="contato" className="py-24 md:py-32 relative bg-transparent">
+      <div className="container mx-auto px-4 text-center max-w-4xl relative z-10">
+        <div className="inline-flex items-center gap-2 mb-8 scroll-reveal px-5 py-2 rounded-full bg-white shadow-soft border border-primary/10 text-primary text-xs font-bold uppercase tracking-widest leading-none">
+          <Sparkles className="w-4 h-4" />
           Sua Jornada Começa Agora
-        </p>
-        <h2 className="scroll-reveal text-3xl md:text-5xl font-display font-light text-foreground mb-6">
-          Você merece viver em{" "}
-          <span className="italic font-semibold text-primary">inteireza</span>
+        </div>
+
+        <h2 className="scroll-reveal text-5xl md:text-7xl font-display font-light text-foreground mb-8 leading-tight">
+          Você merece viver em <br />
+          <span className="italic font-semibold text-primary">inteireza real</span>
         </h2>
-        <p className="scroll-reveal text-lg font-body text-muted-foreground leading-relaxed mb-4">
+
+        <p className="scroll-reveal text-xl md:text-2xl font-body text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto">
           Não espere mais para se encontrar. Dê o primeiro passo em direção à
-          mulher que você sempre soube que poderia ser. Eu estarei aqui para
-          caminhar ao seu lado.
-        </p>
-        <p className="scroll-reveal text-base font-body text-foreground font-medium mb-10">
-          🏵️ Corpo • Mente • Emoção • Espírito
+          mulher que você sempre soube que poderia ser.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="scroll-reveal flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <Button
             variant="hero"
             size="lg"
-            className="text-base px-12 py-7"
+            className="w-full sm:w-auto h-20 px-12 text-xl rounded-full shadow-premium"
             asChild
           >
             <a
-              href="https://wa.me/5511977235584?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20mentoria%20Jornada%204C."
+              href="https://chat.whatsapp.com/CqV5pSHXNQz8vaAE48fXqh?mode=gi_t"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Fale Comigo no WhatsApp
+              <MessageCircle className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform" />
+              Entrar no Grupo
             </a>
           </Button>
+
           <Button
             variant="warmOutline"
             size="lg"
-            className="text-base px-12 py-7"
+            className="w-full sm:w-auto h-20 px-12 text-xl rounded-full border-2"
+            asChild
           >
-            <button
-              onClick={() => scrollToSection("mentoria")}
-              className="w-full"
+            <a
+              href="https://form.respondi.app/RhAy0nd6"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Saiba Mais Sobre a Mentoria
-            </button>
+              <FormInput className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform" />
+              Preencher Formulário
+            </a>
           </Button>
         </div>
 
-        <p className="text-sm font-body text-muted-foreground mt-8 italic">
-          "A maior revolução que uma mulher pode fazer é escolher a si mesma."
-        </p>
+        <div className="scroll-reveal pt-12 border-t border-primary/10">
+          <p className="text-2xl md:text-3xl font-display text-primary italic leading-relaxed">
+            "A maior revolução que uma mulher pode fazer é escolher a si mesma."
+          </p>
+        </div>
       </div>
     </section>
   );

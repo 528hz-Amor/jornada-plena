@@ -83,6 +83,17 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1rem",
+        "2xl": "1.5rem",
+        "3xl": "2.5rem",
+        "4xl": "4rem",
+        "organic-1": "30% 70% 70% 30% / 30% 30% 70% 70%",
+        "organic-2": "60% 40% 30% 70% / 60% 30% 70% 40%",
+      },
+      boxShadow: {
+        'soft': '0 10px 30px -10px rgba(0, 0, 0, 0.05)',
+        'premium': '0 20px 40px -15px rgba(186, 112, 126, 0.15)',
+        'card-hover': '0 30px 60px -12px rgba(186, 112, 126, 0.2)',
       },
       keyframes: {
         "accordion-down": {
@@ -103,8 +114,16 @@ export default {
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-15px)" },
         },
+        "scale-in": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,8 +131,10 @@ export default {
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         "fade-in": "fade-in 1s ease-out forwards",
         "float": "float 6s ease-in-out infinite",
+        "scale-in": "scale-in 0.5s ease-out forwards",
+        "marquee": "marquee 60s linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
