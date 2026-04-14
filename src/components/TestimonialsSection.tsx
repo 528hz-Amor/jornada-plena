@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Fernanda R.",
     location: "Curitiba, PR",
-    text: "Eu não sabia que era possível sentir tanta paz e clareza. O método Vida Lirica me reconectou com partes de mim que eu tinha esquecido. Recomendo de coração.",
+    text: "Eu não sabia que era possível sentir tanta paz e clareza. O método Vida Lírica me reconectou com partes de mim que eu tinha esquecido. Recomendo de coração.",
     rating: 5,
   },
   {
@@ -66,17 +66,17 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="depoimentos" className="py-24 md:py-32 bg-transparent relative">
+    <section id="depoimentos" className="py-24 md:py-32 bg-background relative transition-colors duration-300">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="scroll-reveal text-sm font-body uppercase tracking-[0.4em] text-primary mb-4 font-bold">
+          <p className="scroll-reveal text-sm font-sans uppercase tracking-[0.4em] text-accent mb-4 font-bold">
             Depoimentos
           </p>
-          <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground mb-8 leading-tight">
+          <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-8 leading-tight">
             Histórias reais de <br />
-            <span className="italic font-semibold text-primary">transformação</span>
+            <span className="italic text-accent">transformação</span>
           </h2>
-          <p className="scroll-reveal text-lg font-body text-muted-foreground leading-relaxed">
+          <p className="scroll-reveal text-lg font-body text-foreground/70 leading-relaxed">
             Mulheres que decidiram escolher a si mesmas e viveram mudanças profundas em suas vidas.
           </p>
         </div>
@@ -85,30 +85,30 @@ const TestimonialsSection = () => {
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="scroll-reveal group bg-white/60 backdrop-blur-md rounded-[2.5rem] p-10 border border-white shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+              className="scroll-reveal group bg-card backdrop-blur-md rounded-[2.5rem] p-10 border border-border shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
             >
               <div className="flex gap-1 mb-6">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
 
               <div className="relative mb-8 flex-grow">
-                <Quote className="w-12 h-12 text-primary/10 absolute -top-6 -left-6 -z-0" />
+                <Quote className="w-12 h-12 text-accent/10 absolute -top-6 -left-6 -z-0" />
                 <p className="font-body text-lg text-foreground/80 leading-relaxed italic relative z-10">
                   "{t.text}"
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 pt-8 border-t border-primary/5">
-                <div className="w-14 h-14 rounded-organic-2 bg-gradient-to-br from-blush to-primary/20 flex items-center justify-center shadow-sm">
-                  <span className="text-xl font-display font-bold text-primary">
+              <div className="flex items-center gap-4 pt-8 border-t border-border">
+                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center shadow-sm">
+                  <span className="text-xl font-display font-bold text-accent">
                     {t.name.charAt(0)}
                   </span>
                 </div>
                 <div>
                   <p className="font-body text-lg font-bold text-foreground">{t.name}</p>
-                  <p className="font-body text-xs uppercase tracking-widest text-muted-foreground">{t.location}</p>
+                  <p className="font-sans text-xs uppercase tracking-widest text-accent/80">{t.location}</p>
                 </div>
               </div>
             </div>

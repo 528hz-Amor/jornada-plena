@@ -30,7 +30,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 110;
+      const offsetTop = element.offsetTop - 80;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -55,7 +55,7 @@ const Navbar = () => {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          const offsetTop = element.offsetTop - 110;
+          const offsetTop = element.offsetTop - 80;
           window.scrollTo({
             top: offsetTop,
             behavior: "smooth",
@@ -69,44 +69,44 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-4 md:px-8",
+        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500",
         scrolled || location.pathname !== "/"
-          ? "py-2 md:py-3"
-          : "py-2 md:py-6"
+          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm py-3 md:py-4"
+          : "bg-transparent py-5 md:py-6",
       )}
     >
-      <div className={cn(
-        "container mx-auto flex items-center justify-between transition-all duration-500 rounded-full px-4 md:px-6 py-2 md:py-2.5 border",
-        scrolled || location.pathname !== "/"
-          ? "bg-white/60 backdrop-blur-xl border-white/40 shadow-premium"
-          : "bg-white/20 backdrop-blur-md border-white/20 shadow-soft"
-      )}>
+      <div className="container mx-auto flex items-center justify-between px-6 md:px-10">
         <Link
           to="/"
-          className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tighter flex items-center gap-2 group shrink-0"
+          className="font-display text-lg md:text-xl font-bold text-foreground tracking-tighter flex items-center gap-2 group shrink-0"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <div className="w-8 h-8 md:w-9 md:h-9 rounded-organic-1 bg-primary flex items-center justify-center text-white text-[10px] font-body font-bold group-hover:rotate-12 transition-transform duration-500 shadow-premium">VL</div>
-          <span className="group-hover:text-primary transition-colors inline-block whitespace-nowrap">Vida <span className="text-primary italic">Lirica</span></span>
+          <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-[10px] font-sans font-bold group-hover:rotate-12 transition-transform duration-500 shadow-premium">
+            VL
+          </div>
+          <span className="group-hover:text-accent transition-colors inline-block whitespace-nowrap">
+            Vida <span className="italic">Lírica</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => handleNavClick(link.href)}
-              className="px-4 py-2 text-xs font-body font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-all duration-300 relative group"
-            >
-              {link.label}
-              <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full" />
-            </button>
-          ))}
+        <div className="hidden lg:flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className="px-3 py-2 text-[11px] font-sans font-bold uppercase tracking-[0.15em] text-foreground/70 hover:text-accent transition-all duration-300 relative group"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full" />
+              </button>
+            ))}
+          </div>
           <div className="ml-4">
             <Button
-              variant="hero"
               size="sm"
-              className="px-6 h-10 text-[10px] uppercase tracking-widest"
+              className="px-6 h-9 text-[10px] uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-bold rounded-full shadow-lg"
               onClick={() => handleNavClick("#contato")}
             >
               Começar Agora
@@ -123,30 +123,28 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu - Glassmorphism */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="lg:hidden absolute top-full left-4 right-4 mt-2 bg-white/80 backdrop-blur-2xl rounded-[2.5rem] border border-white shadow-premium p-8 z-50"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-background border-b border-border overflow-hidden"
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col p-6 gap-2">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="block py-4 px-6 text-xl font-display font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-2xl transition-all text-left"
+                  className="block py-3 px-4 text-lg font-display font-bold text-foreground hover:text-accent hover:bg-primary/5 rounded-xl transition-all text-left"
                 >
                   {link.label}
                 </button>
               ))}
               <Button
-                variant="hero"
                 size="lg"
-                className="w-full mt-6 py-8 text-base"
+                className="w-full mt-4 py-6 text-sm bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-bold uppercase tracking-widest rounded-full"
                 onClick={() => handleNavClick("#contato")}
               >
                 Iniciar Minha Jornada

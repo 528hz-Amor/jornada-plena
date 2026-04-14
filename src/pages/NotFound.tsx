@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,22 +14,20 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Página Não Encontrada</h1>
-        <p className="mb-4 text-lg text-muted-foreground">
-          Error 404 - Esta página não existe
-        </p>
-        <p className="mb-6 text-muted-foreground">
+    <div className="flex min-h-screen items-center justify-center bg-beige p-4">
+      <div className="text-center max-w-md bg-white/60 backdrop-blur-md rounded-[3rem] p-12 shadow-premium border border-white">
+        <h1 className="mb-4 text-6xl font-display font-bold text-primary">404</h1>
+        <h2 className="mb-6 text-2xl font-display font-bold text-earth">Página Não Encontrada</h2>
+        <p className="mb-8 text-earth/80 font-body leading-relaxed">
           Desculpe, a página que você está procurando não foi encontrada.
-          Retorne à página inicial para continuar sua jornada de transformação.
+          Sua jornada de transformação continua na página inicial.
         </p>
-        <a
-          href="/jornada-plena/"
-          className="text-primary underline hover:text-primary/90 font-semibold"
-        >
-          ← Voltar para a Página Inicial
-        </a>
+        <Button asChild className="bg-moss hover:bg-moss/90 text-white font-sans font-bold uppercase tracking-widest rounded-full h-14 px-8">
+          <Link to="/" className="flex items-center gap-2">
+            <ArrowLeft size={18} />
+            Voltar ao Início
+          </Link>
+        </Button>
       </div>
     </div>
   );

@@ -4,46 +4,45 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 const pillars = [
   {
-    emoji: "🧘‍♀️",
+    emoji: "🌿",
     title: "Corpo",
-    description:
-      "Reconexão com seu corpo como templo sagrado. Práticas de presença, respiração e cuidado físico consciente.",
-    color: "bg-warm/40",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(214,188,154,0.3)]",
+    phase: "Fase 1 — Reconectar",
+    description: "Reconectar. Sair do automático para acessar o estado de Presença. Você começa voltando pra si: sair do piloto automático, perceber seu corpo no dia a dia, criar presença nas pequenas ações.",
+    benefit: "você sente mais energia e começa a se escutar",
+    color: "bg-accent/10 dark:bg-terracotta/20",
   },
   {
-    emoji: "🧠",
-    title: "Mente",
-    description:
-      "Reprogramação de crenças limitantes, clareza mental e desenvolvimento de uma mentalidade de crescimento.",
-    color: "bg-lilac/40",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(204,188,214,0.3)]",
-  },
-  {
-    emoji: "💗",
+    emoji: "🌊",
     title: "Emoção",
-    description:
-      "Inteligência emocional, acolhimento das emoções e desenvolvimento de equilíbrio e resiliência interior.",
-    color: "bg-blush/40",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(186,112,126,0.2)]",
+    phase: "Fase 2 — Desaguar",
+    description: "Desatar nós. Acolher emoções e se expressar com leveza e segurança. Aqui você para de travar ou reagir: entender suas emoções, acolher sem se afogar nelas, parar padrões que te sabotam.",
+    benefit: "você ganha leveza emocional",
+    color: "bg-accent/10 dark:bg-sage/20",
   },
   {
-    emoji: "✨",
+    emoji: "☀️",
+    title: "Mente",
+    phase: "Fase 3 — Clarear",
+    description: "Clarear. Reduzir o ruído mental, reprogramar crenças e tomar decisões com segurança. Você começa a enxergar com clareza: identificar pensamentos que te limitam, tomar decisões com mais segurança, organizar sua vida de dentro pra fora.",
+    benefit: "você para de se confundir e começa a se direcionar",
+    color: "bg-accent/10 dark:bg-ochre/20",
+  },
+  {
+    emoji: "🌳",
     title: "Espírito",
-    description:
-      "Conexão com sua essência espiritual, propósito de vida e alinhamento com algo maior que você.",
-    color: "bg-secondary/60",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(150,150,150,0.15)]",
+    phase: "Fase 4 — Enraizar",
+    description: "Agora você sustenta. confiar mais em si mesma parar de recomeçar do zero construir consistência sem rigidez.",
+    benefit: "sua vida começa a ter base",
+    color: "bg-accent/10 dark:bg-clay/20",
   },
 ];
 
 const outcomes = [
-  "Autoconhecimento profundo e duradouro",
-  "Paz interior e equilíbrio emocional",
-  "Clareza sobre seu propósito de vida",
-  "Relacionamentos mais saudáveis e autênticos",
-  "Confiança e amor próprio fortalecidos",
-  "Uma vida vivida com inteireza e presença",
+  "mais presença no dia a dia",
+  "decisões mais claras",
+  "emoções equilibradas",
+  "confiança em si mesma",
+  "rotina que te sustenta",
 ];
 
 const JourneySection = () => {
@@ -72,64 +71,61 @@ const JourneySection = () => {
   }, []);
 
   return (
-    <section id="jornada" className="py-24 md:py-32 bg-transparent relative">
-      {/* Decorative text background with marquee animation */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full overflow-hidden select-none pointer-events-none z-0">
-        <div className="flex whitespace-nowrap animate-marquee opacity-[0.03] md:opacity-[0.05] w-max">
-          <span className="text-[20vw] font-display font-bold text-primary inline-block lining-nums">
-            JORNADA 4C&nbsp;•&nbsp;JORNADA 4C&nbsp;•&nbsp;JORNADA 4C&nbsp;•&nbsp;JORNADA 4C&nbsp;•&nbsp;
-          </span>
-          <span className="text-[20vw] font-display font-bold text-primary inline-block lining-nums">
-            JORNADA 4C&nbsp;•&nbsp;JORNADA 4C&nbsp;•&nbsp;JORNADA 4C&nbsp;•&nbsp;JORNADA 4C&nbsp;•&nbsp;
-          </span>
-        </div>
-      </div>
-
+    <section id="jornada" className="py-24 md:py-32 bg-background relative overflow-hidden transition-colors duration-300">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="scroll-reveal text-sm font-body uppercase tracking-[0.4em] text-primary mb-4 font-bold">
-            A Jornada de Transformação
+          <p className="scroll-reveal text-sm font-sans uppercase tracking-[0.4em] text-accent mb-4 font-bold">
+            O Caminho da Inteireza
           </p>
-          <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground mb-8">
-            O Método <span className="italic font-semibold text-primary lining-nums">4C</span>
+          <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-8">
+            O Método <span className="italic text-accent">4C</span>
           </h2>
-          <p className="scroll-reveal text-lg font-body text-muted-foreground leading-relaxed">
-            Uma abordagem integrada que honra todas as dimensões do ser
-            feminino, guiando você através de quatro pilares fundamentais.
+          <p className="scroll-reveal text-lg font-body text-foreground/70 leading-relaxed mb-6">
+            Uma abordagem integrativa que honra todas as dimensões do Ser. A jornada te guia na integração do corpo, mente, emoção e espírito à sua rotina real.
+          </p>
+          <p className="scroll-reveal text-xl font-display italic text-accent font-medium">
+            Um caminho simples, profundo e possível que acontece dentro da sua rotina.
           </p>
         </div>
 
-        {/* 4 Pillars Grid with improved cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+        {/* 4 Pillars Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-24">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className={`${pillar.color} ${pillar.shadow} scroll-reveal group bg-white/40 backdrop-blur-sm rounded-[2rem] p-10 text-center border border-white/50 transition-all duration-700 hover:-translate-y-3 shadow-soft`}
+              className={`${pillar.color} scroll-reveal group backdrop-blur-md rounded-[2.5rem] p-10 border border-border transition-all duration-700 hover:-translate-y-3 shadow-soft`}
             >
-              <div className="w-20 h-20 bg-white/80 rounded-full flex items-center justify-center text-4xl mx-auto mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                {pillar.emoji}
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="w-16 h-16 bg-white/20 dark:bg-white/10 rounded-full flex items-center justify-center text-3xl shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                  {pillar.emoji}
+                </div>
+                <div>
+                  <p className="text-xs font-sans uppercase tracking-widest text-accent font-bold mb-1">{pillar.phase}</p>
+                  <h3 className="text-2xl font-display font-bold text-foreground mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="font-body text-base text-foreground/70 leading-relaxed mb-4 whitespace-pre-line">
+                    {pillar.description}
+                  </p>
+                  <p className="font-sans text-sm font-bold text-accent italic">
+                    👉 {pillar.benefit}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-display font-bold text-foreground mb-4">
-                {pillar.title}
-              </h3>
-              <p className="font-body text-base text-muted-foreground leading-relaxed">
-                {pillar.description}
-              </p>
             </div>
           ))}
         </div>
 
-        {/* Outcomes with better visual hierarchy */}
+        {/* Outcomes */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10 order-2 lg:order-1">
             <div className="space-y-4">
-              <h3 className="scroll-reveal text-3xl md:text-4xl font-display font-light text-foreground flex items-center gap-3">
-                <Sparkles className="text-primary w-6 h-6" />
-                Resultados reais
+              <h3 className="scroll-reveal text-2xl md:text-3xl font-display font-bold text-foreground flex items-center gap-3 leading-tight uppercase">
+                <Sparkles className="text-accent w-6 h-6 shrink-0" />
+                O QUE MUDA NA SUA VIDA
               </h3>
-              <p className="scroll-reveal text-lg font-body text-muted-foreground leading-relaxed">
-                Ao final dessa jornada, você terá vivido uma transformação real e
-                profunda. Não apenas no que você faz, mas em quem você é.
+              <p className="scroll-reveal text-lg font-body text-foreground opacity-80 font-medium">
+                Você não vai sair com mais tarefas. Vai sair diferente:
               </p>
             </div>
 
@@ -137,14 +133,20 @@ const JourneySection = () => {
               {outcomes.map((outcome, i) => (
                 <div
                   key={i}
-                  className="scroll-reveal group flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white shadow-soft hover:shadow-premium transition-all duration-300"
+                  className="scroll-reveal group flex items-center gap-4 bg-card backdrop-blur-sm rounded-2xl px-6 py-4 border border-border shadow-soft hover:shadow-premium transition-all duration-300"
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                     <ArrowRight className="w-4 h-4" />
                   </div>
                   <p className="font-body text-base md:text-lg text-foreground/80 font-medium">{outcome}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="scroll-reveal pt-6 border-t border-border">
+               <p className="text-xl font-display font-bold text-foreground italic">
+                 "Sua vida não precisa ser perfeita. Mas pode ser leve, presente e verdadeiramente sua."
+               </p>
             </div>
           </div>
 
@@ -152,15 +154,15 @@ const JourneySection = () => {
             <div className="rounded-[3rem] overflow-hidden shadow-premium aspect-[4/5] relative z-10">
               <img
                 src={wellnessImage}
-                alt="Bem-estar e autocuidado feminino"
+                alt="Bem-estar e autocuidado Vida Lírica"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
             </div>
             {/* Decorative background shapes */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-warm/30 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-lilac/20 rounded-full blur-2xl -z-10" />
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl -z-10" />
           </div>
         </div>
       </div>

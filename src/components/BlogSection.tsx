@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, Calendar, Tag, ArrowLeft } from "lucide-react";
 import { posts } from "@/lib/blog-data";
+import { ThemeToggle } from "./ThemeToggle";
 
 const BlogSection = () => {
   const location = useLocation();
@@ -49,35 +50,42 @@ const BlogSection = () => {
   const displayPosts = isFullPage ? posts : posts.slice(0, 4);
 
   return (
-    <section id="blog" className={`py-24 md:py-32 bg-transparent relative overflow-hidden ${isFullPage ? 'pt-40' : ''}`}>
+    <section id="blog" className={`py-24 md:py-32 bg-background relative overflow-hidden transition-colors duration-300 ${isFullPage ? 'pt-40' : ''}`}>
       <div className="container mx-auto px-4 relative z-10">
         {isFullPage && (
-          <button
-            onClick={handleBackToHome}
-            className="inline-flex items-center gap-2 text-primary font-body font-bold hover:gap-3 transition-all mb-12 group"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Voltar para sessão blog do início
-          </button>
+          <div className="flex justify-between items-center mb-12">
+            <button
+              onClick={handleBackToHome}
+              className="inline-flex items-center gap-2 text-accent font-sans font-bold hover:gap-3 transition-all group"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Voltar para o início
+            </button>
+            <div className="scale-90 origin-right">
+              <ThemeToggle inline />
+            </div>
+          </div>
         )}
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
-            <p className="scroll-reveal text-sm font-body uppercase tracking-[0.4em] text-primary mb-4 font-bold">
+            <p className="scroll-reveal text-sm font-sans uppercase tracking-[0.4em] text-accent mb-4 font-bold">
               Conteúdo & Reflexões
             </p>
-            <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground leading-tight">
+            <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight">
               {isFullPage ? "Todos os nossos artigos" : "Inspirações para sua jornada interior"}
             </h2>
           </div>
-          {!isFullPage && (
-            <div className="scroll-reveal">
-              <Link to="/blog" className="group flex items-center gap-2 text-primary font-body font-bold hover:gap-4 transition-all duration-300">
-                Ver todos os artigos
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          )}
+          <div className="flex items-center gap-6">
+            {!isFullPage && (
+              <div className="scroll-reveal">
+                <Link to="/blog" className="group flex items-center gap-2 text-accent font-sans font-bold hover:gap-4 transition-all duration-300">
+                  Ver todos os artigos
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -86,16 +94,16 @@ const BlogSection = () => {
               key={index}
               to={`/blog/${post.id}`}
               state={{ from: location.pathname }}
-              className="scroll-reveal group flex flex-col h-full bg-white/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2"
+              className="scroll-reveal group flex flex-col h-full bg-card backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-border shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="relative h-64 overflow-hidden bg-primary/5">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-body font-bold uppercase tracking-wider text-primary shadow-sm">
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm text-[10px] font-sans font-bold uppercase tracking-wider text-accent shadow-sm">
                     <Tag className="w-3 h-3" />
                     {post.category}
                   </span>
@@ -108,7 +116,7 @@ const BlogSection = () => {
                   {post.date}
                 </div>
 
-                <h3 className="text-xl font-display font-bold text-foreground leading-tight mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                <h3 className="text-xl font-display font-bold text-foreground leading-tight mb-4 group-hover:text-accent transition-colors duration-300 line-clamp-2">
                   {post.title}
                 </h3>
 
@@ -116,7 +124,7 @@ const BlogSection = () => {
                   {post.excerpt}
                 </p>
 
-                <div className="pt-4 border-t border-primary/5 flex items-center text-primary text-[10px] font-bold uppercase tracking-widest gap-2 group-hover:gap-4 transition-all duration-300">
+                <div className="pt-4 border-t border-border flex items-center text-accent text-[10px] font-bold uppercase tracking-widest gap-2 group-hover:gap-4 transition-all duration-300">
                   Ler artigo completo
                   <ArrowRight className="w-4 h-4" />
                 </div>
