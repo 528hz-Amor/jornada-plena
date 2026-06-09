@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import wellnessImage from "@/assets/wellness-still-life.jpg";
+import wellnessImage from "@/assets/wellness-still-life-optimized.jpg";
 import { Sparkles, ArrowRight } from "lucide-react";
 
 const pillars = [

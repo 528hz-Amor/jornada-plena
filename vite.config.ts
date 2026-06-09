@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/jornada-plena/",
+  base: process.env.CF_PAGES ? "/" : "/jornada-plena/",
   server: {
     host: "::",
     port: 8080,

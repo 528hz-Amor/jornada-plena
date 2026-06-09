@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import mentorshipImage from "@/assets/mentorship-session.jpg";
+import mentorshipImage from "@/assets/mentorship-session-optimized.jpg";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -135,14 +135,14 @@ const MentorshipSection = () => {
         </div>
 
         {/* Highlight Section */}
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-24 items-center">
           <div
             ref={imageRef}
-            className="scroll-reveal relative group cursor-default"
+            className="scroll-reveal relative group cursor-default w-full min-w-0 mx-auto"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <div className="rounded-[3rem] overflow-hidden shadow-premium aspect-[4/3] relative z-10">
+            <div className="w-full max-w-full rounded-[3rem] overflow-hidden shadow-premium aspect-[4/3] lg:aspect-[16/9] relative z-10 mx-auto">
               <img
                 src={mentorshipImage}
                 alt="Sessão de mentoria Vida Lírica"
@@ -168,7 +168,7 @@ const MentorshipSection = () => {
             </motion.div>
 
             {/* Organic decorative shape behind image */}
-            <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10 hidden lg:block" />
           </div>
 
           <div className="space-y-10">
@@ -205,10 +205,10 @@ const MentorshipSection = () => {
             <div className="scroll-reveal pt-4">
               <Button
                 size="lg"
-                className="w-full sm:w-auto h-auto min-h-[64px] py-4 px-10 text-[10px] md:text-xs rounded-full bg-primary text-primary-foreground hover:bg-primary/95 shadow-premium hover:shadow-gold hover:-translate-y-1.5 transition-all duration-500 font-sans uppercase font-bold tracking-[0.3em] group"
+                className="w-full sm:w-auto h-auto min-h-[64px] py-4 px-10 text-[10px] md:text-xs rounded-full bg-primary text-primary-foreground hover:bg-primary/95 shadow-premium hover:shadow-gold hover:-translate-y-1.5 transition-all duration-500 font-sans uppercase font-bold tracking-[0.3em] group whitespace-normal break-words"
                 onClick={() => scrollToSection("contato")}
               >
-                <span className="flex items-center justify-center gap-3">
+                <span className="flex flex-wrap items-center justify-center gap-3 text-center whitespace-normal break-words">
                   Quero construir uma vida que me sustenta
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import mentorPortrait from "@/assets/mentor-portrait.jpg";
+import mentorPortrait from "@/assets/mentor-portrait-optimized.jpg";
 import mandala from "@/assets/mandala-decoration.png";
 import { motion } from "framer-motion";
 
@@ -56,7 +56,7 @@ const AboutSection = () => {
         animate={{ rotate: -360 }}
         transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
         src={mandala}
-        className="absolute top-1/2 -left-32 w-[500px] h-[500px] opacity-[0.03] grayscale dark:invert pointer-events-none"
+        className="absolute top-1/2 -left-32 w-[500px] h-[500px] sm:-left-20 sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px] opacity-[0.03] grayscale dark:invert pointer-events-none"
         alt=""
       />
 

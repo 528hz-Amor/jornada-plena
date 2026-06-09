@@ -118,6 +118,9 @@ const Navbar = () => {
         <button
           className="lg:hidden p-2 text-foreground hover:bg-primary/10 rounded-full transition-colors"
           onClick={() => setOpen(!open)}
+          aria-label={open ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -127,6 +130,7 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

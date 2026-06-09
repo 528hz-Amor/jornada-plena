@@ -1,4 +1,4 @@
-import wellnessImage from "@/assets/wellness-still-life.jpg";
+import wellnessImage from "@/assets/wellness-still-life-optimized.jpg";
 
 export const posts = [
   {

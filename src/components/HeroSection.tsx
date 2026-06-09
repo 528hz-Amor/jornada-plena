@@ -35,10 +35,12 @@ const HeroSection = () => {
     }
   };
 
+  const applicationUrl = "https://form.respondi.app/RhAy0nd6";
+
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center bg-background pt-20 lg:pt-10 pb-16 overflow-hidden transition-colors duration-300"
+      className="relative min-h-screen flex items-center bg-background pt-28 lg:pt-24 pb-16 overflow-hidden transition-colors duration-300"
     >
       {/* Mystical Background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -46,7 +48,7 @@ const HeroSection = () => {
           animate={{ rotate: 360 }}
           transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
           src={mandala}
-          className="absolute -top-24 -left-24 w-[600px] h-[600px] opacity-[0.03] grayscale dark:invert"
+          className="absolute -top-24 -left-24 w-[600px] h-[600px] sm:-top-20 sm:-left-20 sm:w-[520px] sm:h-[520px] md:w-[600px] md:h-[600px] opacity-[0.03] grayscale dark:invert"
           alt=""
         />
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(197,160,89,0.08),transparent)]" />
@@ -59,7 +61,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="max-w-xl lg:max-w-md xl:max-w-xl space-y-8 md:space-y-10 z-20 order-2 lg:order-1"
+            className="max-w-xl lg:max-w-md xl:max-w-xl space-y-6 md:space-y-10 z-20 order-1"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 backdrop-blur-md border border-accent/20 text-accent text-[10px] md:text-xs font-sans font-bold uppercase tracking-[0.3em]">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -97,12 +99,18 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="w-full sm:w-auto h-auto min-h-[64px] py-4 px-10 text-[10px] md:text-[11px] rounded-full bg-primary text-primary-foreground hover:bg-primary/95 shadow-premium hover:shadow-gold hover:-translate-y-1.5 transition-all duration-500 font-sans uppercase font-bold tracking-[0.3em] group"
-                onClick={() => scrollToSection("contato")}
+                asChild
               >
-                <span className="flex items-center justify-center gap-3">
+                <a
+                  href={applicationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 text-center"
+                  aria-label="Aplicar para a Mentoria Vida Lírica"
+                >
                   Quero Aplicar para a Mentoria
                   <ChevronRight className="shrink-0 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </span>
+                </a>
               </Button>
 
               <button
@@ -124,7 +132,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          <div className="relative z-10 order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="relative z-10 order-2 flex justify-center lg:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

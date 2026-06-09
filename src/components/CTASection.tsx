@@ -64,14 +64,14 @@ const CTASection = () => {
         <div className="scroll-reveal flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <Button
             size="lg"
-            className="w-full sm:w-auto h-auto min-h-[64px] py-4 px-12 text-sm md:text-base rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-premium hover:shadow-gold hover:-translate-y-1 transition-all duration-500 font-sans uppercase font-bold tracking-[0.2em] group"
+            className="w-full sm:w-auto max-w-full h-auto min-h-[64px] py-4 px-6 sm:px-12 text-sm md:text-base rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-premium hover:shadow-gold hover:-translate-y-1 transition-all duration-500 font-sans uppercase font-bold tracking-[0.2em] group whitespace-normal flex-wrap"
             asChild
           >
             <a
               href="https://form.respondi.app/RhAy0nd6"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3"
+              className="flex flex-wrap items-center justify-center gap-3 text-center whitespace-normal break-words"
             >
               Quero aplicar para a Mentoria Vida Lírica
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
