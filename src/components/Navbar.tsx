@@ -15,6 +15,8 @@ const navLinks = [
   { label: "Depoimentos", href: "#depoimentos" },
 ];
 
+const applicationUrl = "https://form.respondi.app/RhAy0nd6";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -107,9 +109,11 @@ const Navbar = () => {
             <Button
               size="sm"
               className="px-6 h-9 text-[10px] uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-bold rounded-full shadow-lg"
-              onClick={() => handleNavClick("#contato")}
+              asChild
             >
-              Começar Agora
+              <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
+                Preencher formulário
+              </a>
             </Button>
           </div>
         </div>
@@ -149,9 +153,16 @@ const Navbar = () => {
               <Button
                 size="lg"
                 className="w-full mt-4 py-6 text-sm bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-bold uppercase tracking-widest rounded-full"
-                onClick={() => handleNavClick("#contato")}
+                asChild
               >
-                Iniciar Minha Jornada
+                <a
+                  href={applicationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                >
+                  Quero dar o primeiro passo
+                </a>
               </Button>
             </div>
           </motion.div>

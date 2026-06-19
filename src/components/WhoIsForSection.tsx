@@ -2,19 +2,19 @@ import { Heart, Frown, Compass, Sparkles, Shield, Sun, CheckCircle2, XCircle, Ro
 import { useEffect } from "react";
 
 const painPoints = [
-  { icon: Frown, text: "Vive cansada, mesmo quando tenta desacelerar", color: "bg-accent/10" },
-  { icon: Heart, text: "Convive com uma profunda desconexão e angústia", color: "bg-accent/20" },
-  { icon: Shield, text: "Inicia mudanças, mas não consegue sustentar", color: "bg-accent/10" },
-  { icon: Compass, text: "Sente que merece viver melhor, mas não sabe como fazer acontecer", color: "bg-accent/20" },
-  { icon: Sparkles, text: "Se perdeu de si mesma no meio das demandas externas", color: "bg-accent/10" },
-  { icon: Sun, text: "Busca mais clareza, leveza e direção", color: "bg-accent/20" },
+  { icon: Frown, text: "Sente cansaço e sobrecarga, mesmo quando tenta desacelerar", color: "bg-accent/10" },
+  { icon: Heart, text: "Convive com ansiedade, angústia ou uma sensação de desconexão", color: "bg-accent/20" },
+  { icon: Shield, text: "Começa mudanças importantes, mas encontra dificuldade para sustentá-las", color: "bg-accent/10" },
+  { icon: Compass, text: "Percebe que precisa de uma nova direção, mas não sabe por onde começar", color: "bg-accent/20" },
+  { icon: Sparkles, text: "Sente que se afastou de si no meio das cobranças e demandas externas", color: "bg-accent/10" },
+  { icon: Sun, text: "Busca propósito, clareza e uma relação mais consciente com a própria vida", color: "bg-accent/20" },
 ];
 
 const feelings = [
-  { icon: RotateCcw, text: "Já tentou mudar, mas sempre volta pro mesmo lugar" },
-  { icon: ZapOff, text: "Começa bem e perde consistência" },
-  { icon: Frown, text: "Vive cansada, sobrecarregada ou emocionalmente instável" },
-  { icon: Anchor, text: "Se sente desconectada de si mesma" },
+  { icon: RotateCcw, text: "Já tentou mudar, mas acaba retornando aos mesmos padrões" },
+  { icon: ZapOff, text: "Sabe o que faria bem, mas não consegue manter constância" },
+  { icon: Frown, text: "Vive em alerta, sobrecarregado ou emocionalmente confuso" },
+  { icon: Anchor, text: "Sente falta de conexão consigo e com o que dá sentido à sua vida" },
 ];
 
 const WhoIsForSection = () => {
@@ -47,14 +47,14 @@ const WhoIsForSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="scroll-reveal text-sm font-sans uppercase tracking-[0.4em] text-accent mb-4 font-bold">
-            Para Quem É
+            Este acompanhamento pode ajudar
           </p>
           <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-8 leading-tight">
-            Essa jornada foi feita para <br />
-            <span className="italic text-accent">você</span>
+            Para quem sente que é hora de <br />
+            <span className="italic text-accent">voltar a si</span>
           </h2>
           <p className="scroll-reveal text-lg font-body text-muted-foreground leading-relaxed">
-            Se você se sente sobrecarregada, estagnada, sem conseguir colocar em prática ou manter constância naquilo que você já sabe que precisa ser feito.
+            Talvez você não precise de mais cobranças ou respostas prontas. Talvez precise de um espaço de escuta, acolhimento e orientação para compreender o que está vivendo.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ const WhoIsForSection = () => {
         {/* Seção "Você sente que" */}
         <div className="scroll-reveal mb-24 max-w-5xl mx-auto">
           <div className="bg-card rounded-[3rem] p-10 md:p-16 border border-border backdrop-blur-sm">
-            <h3 className="text-3xl font-display font-bold text-foreground mb-10 text-center">Você sente que:</h3>
+            <h3 className="text-3xl font-display font-bold text-foreground mb-10 text-center">Talvez você se reconheça aqui:</h3>
             <div className="grid md:grid-cols-2 gap-8">
               {feelings.map((feeling, i) => (
                 <div key={i} className="flex items-center gap-4 bg-background/50 p-6 rounded-2xl border border-border">
@@ -89,14 +89,14 @@ const WhoIsForSection = () => {
               ))}
             </div>
             <div className="mt-12 text-center">
-              <p className="text-2xl font-display italic text-accent font-bold">👉 Você não está sozinha.</p>
+              <p className="text-2xl font-display italic text-accent font-bold">Você não precisa atravessar isso sem apoio.</p>
             </div>
           </div>
         </div>
 
         <div className="text-center mb-20">
            <p className="scroll-reveal text-2xl md:text-3xl font-display italic text-foreground opacity-70 font-medium">
-              "Sua versão mais autêntica, presente e plena está esperando para ser vivida."
+              "A mudança pode começar quando você encontra segurança para se escutar."
            </p>
         </div>
 
@@ -109,10 +109,10 @@ const WhoIsForSection = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4">Para quem NÃO é:</h3>
+                <h3 className="text-2xl font-display font-bold text-foreground mb-4">Talvez este acompanhamento não seja para você se:</h3>
                 <ul className="space-y-2 text-muted-foreground font-body text-lg">
-                  <li>• Quem busca fórmula pronta ou resultados rápidos sem esforço</li>
-                  <li>• Quem não está disposta a se olhar e se comprometer</li>
+                  <li>• Você procura uma fórmula pronta ou uma solução imediata para questões profundas</li>
+                  <li>• Neste momento, não deseja participar ativamente do próprio processo de cuidado</li>
                 </ul>
               </div>
            </div>
@@ -126,18 +126,18 @@ const WhoIsForSection = () => {
             <div className="lg:col-span-2">
               <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground leading-tight">
                 O que você pode <br />
-                <span className="italic text-accent">esperar:</span>
+                <span className="italic text-accent">desenvolver:</span>
               </h3>
             </div>
 
             <div className="lg:col-span-3 grid sm:grid-cols-1 gap-6 text-left">
               {[
-                "Viver com prazer e apreciar cada detalhe do seu dia",
-                "Sustentar com constância uma rotina que materializa seus sonhos",
-                "Expressar emoções com tranquilidade e segurança",
-                "Tomar decisões assertivas sem culpa",
-                "Autoconfiança para ser Inteira e multifacetada",
-                "Clareza, direção e propósito para orientar o seu caminho",
+                "Mais presença para perceber suas necessidades no dia a dia",
+                "Uma rotina de cuidado possível, sem rigidez ou perfeccionismo",
+                "Mais recursos para acolher e expressar suas emoções",
+                "Clareza para fazer escolhas mais alinhadas aos seus valores",
+                "Confiança para respeitar quem você é e o seu próprio ritmo",
+                "Uma conexão mais consciente com seu propósito e direção",
               ].map((benefit, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-accent-foreground transition-all">

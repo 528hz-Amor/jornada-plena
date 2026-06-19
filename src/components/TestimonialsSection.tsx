@@ -73,11 +73,11 @@ const TestimonialsSection = () => {
             Depoimentos
           </p>
           <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-8 leading-tight">
-            Histórias reais de <br />
-            <span className="italic text-accent">transformação</span>
+            Experiências de quem escolheu <br />
+            <span className="italic text-accent">se cuidar</span>
           </h2>
           <p className="scroll-reveal text-lg font-body text-foreground/70 leading-relaxed">
-            Mulheres que decidiram escolher a si mesmas e viveram mudanças profundas em suas vidas.
+            Cada processo acontece de um jeito único. Estes relatos compartilham diferentes percepções sobre acolhimento, clareza e reconexão interior.
           </p>
         </div>
 

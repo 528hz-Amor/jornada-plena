@@ -65,12 +65,12 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 backdrop-blur-md border border-accent/20 text-accent text-[10px] md:text-xs font-sans font-bold uppercase tracking-[0.3em]">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Sua Essência é Sagrada
+              Um espaço para voltar a si
             </div>
 
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl xl:text-8xl font-display font-bold leading-[1.05] text-foreground tracking-tight">
-                Viva com <br />
+                Encontre <br />
                 <span className="relative inline-block text-accent">
                   <span className="italic">Presença</span>
                   <motion.svg
@@ -84,15 +84,15 @@ const HeroSection = () => {
                     <path d="M2 10C50 2 150 2 198 10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
                   </motion.svg>
                 </span>
-                <br /><span>e Inteireza</span>
+                <br /><span>e Clareza</span>
               </h1>
               <p className="text-xl md:text-2xl font-display italic text-accent opacity-80 font-medium">
-                "Você não precisa aprender mais. <br className="hidden md:block" /> Precisa conseguir viver o que já sabe."
+                "Você não precisa atravessar tudo sem apoio."
               </p>
             </div>
 
             <p className="text-lg md:text-xl font-body text-muted-foreground leading-relaxed max-w-md">
-              Uma jornada de reconexão com sua natureza selvagem e cíclica. Enraíze sua rotina no que é essencial.
+              Um acompanhamento integrativo para acolher suas emoções, recuperar clareza e viver com mais equilíbrio e conexão interior.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-8 pt-4">
@@ -106,9 +106,9 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 text-center"
-                  aria-label="Aplicar para a Mentoria Vida Lírica"
+                  aria-label="Preencher o formulário de atendimento com a Bia"
                 >
-                  Quero Aplicar para a Mentoria
+                  Quero dar o primeiro passo
                   <ChevronRight className="shrink-0 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>

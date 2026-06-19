@@ -7,42 +7,42 @@ const pillars = [
     emoji: "🌿",
     title: "Corpo",
     phase: "Fase 1 — Reconectar",
-    description: "Reconectar. Sair do automático para acessar o estado de Presença. Você começa voltando pra si: sair do piloto automático, perceber seu corpo no dia a dia, criar presença nas pequenas ações.",
-    benefit: "você sente mais energia e começa a se escutar",
+    description: "Voltar a perceber o corpo, a respiração e os sinais que costumam ser ignorados na correria. A presença começa nas pequenas ações do cotidiano.",
+    benefit: "mais percepção das suas necessidades e limites",
     color: "bg-accent/10 dark:bg-terracotta/20",
   },
   {
     emoji: "🌊",
     title: "Emoção",
     phase: "Fase 2 — Desaguar",
-    description: "Desatar nós. Acolher emoções e se expressar com leveza e segurança. Aqui você para de travar ou reagir: entender suas emoções, acolher sem se afogar nelas, parar padrões que te sabotam.",
-    benefit: "você ganha leveza emocional",
+    description: "Reconhecer emoções sem julgamento e encontrar formas mais seguras de expressá-las. O objetivo não é deixar de sentir, mas aprender a se relacionar melhor com o que sente.",
+    benefit: "mais recursos para atravessar momentos emocionalmente difíceis",
     color: "bg-accent/10 dark:bg-sage/20",
   },
   {
     emoji: "☀️",
     title: "Mente",
     phase: "Fase 3 — Clarear",
-    description: "Clarear. Reduzir o ruído mental, reprogramar crenças e tomar decisões com segurança. Você começa a enxergar com clareza: identificar pensamentos que te limitam, tomar decisões com mais segurança, organizar sua vida de dentro pra fora.",
-    benefit: "você para de se confundir e começa a se direcionar",
+    description: "Observar pensamentos, crenças e padrões que alimentam ansiedade ou confusão. Com mais consciência, você pode fazer escolhas coerentes com o que realmente importa.",
+    benefit: "mais clareza para escolher e se posicionar",
     color: "bg-accent/10 dark:bg-ochre/20",
   },
   {
     emoji: "🌳",
     title: "Espírito",
     phase: "Fase 4 — Enraizar",
-    description: "Agora você sustenta. confiar mais em si mesma parar de recomeçar do zero construir consistência sem rigidez.",
-    benefit: "sua vida começa a ter base",
+    description: "Cultivar sentido, conexão e confiança na própria caminhada. A espiritualidade é acolhida como experiência pessoal, sem imposições ou respostas prontas.",
+    benefit: "mais conexão com seus valores, propósito e direção",
     color: "bg-accent/10 dark:bg-clay/20",
   },
 ];
 
 const outcomes = [
-  "mais presença no dia a dia",
-  "decisões mais claras",
-  "emoções equilibradas",
-  "confiança em si mesma",
-  "rotina que te sustenta",
+  "Perceber seus limites antes de chegar à exaustão",
+  "Compreender melhor suas emoções e necessidades",
+  "Fazer escolhas com mais consciência e clareza",
+  "Criar práticas de cuidado que cabem na sua rotina",
+  "Fortalecer a confiança na própria caminhada",
 ];
 
 const JourneySection = () => {
@@ -81,10 +81,10 @@ const JourneySection = () => {
             O Método <span className="italic text-accent">4C</span>
           </h2>
           <p className="scroll-reveal text-lg font-body text-foreground/70 leading-relaxed mb-6">
-            Uma abordagem integrativa que honra todas as dimensões do Ser. A jornada te guia na integração do corpo, mente, emoção e espírito à sua rotina real.
+            Uma abordagem que olha para você por inteiro. Corpo, emoções, mente e espiritualidade são acolhidos de forma integrada, respeitando sua história e suas crenças.
           </p>
           <p className="scroll-reveal text-xl font-display italic text-accent font-medium">
-            Um caminho simples, profundo e possível que acontece dentro da sua rotina.
+            Não se trata de fazer tudo de uma vez, mas de criar mudanças conscientes que possam ser vividas e sustentadas.
           </p>
         </div>
 
@@ -122,10 +122,10 @@ const JourneySection = () => {
             <div className="space-y-4">
               <h3 className="scroll-reveal text-2xl md:text-3xl font-display font-bold text-foreground flex items-center gap-3 leading-tight uppercase">
                 <Sparkles className="text-accent w-6 h-6 shrink-0" />
-                O QUE MUDA NA SUA VIDA
+                O QUE VOCÊ PODE CULTIVAR
               </h3>
               <p className="scroll-reveal text-lg font-body text-foreground opacity-80 font-medium">
-                Você não vai sair com mais tarefas. Vai sair diferente:
+                O processo não acrescenta cobranças. Ele ajuda você a desenvolver novos recursos internos:
               </p>
             </div>
 
@@ -145,7 +145,7 @@ const JourneySection = () => {
 
             <div className="scroll-reveal pt-6 border-t border-border">
                <p className="text-xl font-display font-bold text-foreground italic">
-                 "Sua vida não precisa ser perfeita. Mas pode ser leve, presente e verdadeiramente sua."
+                 "Cuidar de si não é fugir da vida. É aprender a habitá-la com mais presença."
                </p>
             </div>
           </div>

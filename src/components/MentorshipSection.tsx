@@ -7,23 +7,23 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Seu Ponto de Partida",
+    title: "Acolher seu momento",
     description:
-      "O primeiro passo da transformação é saber onde você Está. Aqui analisamos com profundidade sua Rotina, Hábitos, Desafios e Sonhos.",
+      "O processo começa com uma escuta cuidadosa da sua história, da sua rotina e do que hoje pede atenção. Antes de buscar respostas, criamos espaço para compreender.",
     color: "bg-accent/10",
   },
   {
     number: "02",
-    title: "Mapa de Alinhamento",
+    title: "Encontrar direção",
     description:
-      "Construímos um plano personalizado, simples e prático para implementar no seu dia-a-dia práticas alinhadas à vida que você deseja.",
+      "A partir do que emerge nos encontros, construímos caminhos e práticas personalizados, respeitando suas necessidades, seus valores e o seu ritmo.",
     color: "bg-accent/20",
   },
   {
     number: "03",
-    title: "Ritual de Integração",
+    title: "Integrar na vida real",
     description:
-      "Aqui nós comemoramos e reconhecemos suas vitórias, enquanto você usufrui de uma vida plena, com prazer e propósito.",
+      "O cuidado ganha continuidade no cotidiano. Você aprende a reconhecer seus movimentos, acolher seus limites e sustentar mudanças possíveis sem rigidez.",
     color: "bg-accent/5",
   },
 ];
@@ -82,35 +82,21 @@ const MentorshipSection = () => {
     };
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section id="mentoria" className="py-24 md:py-32 bg-background relative overflow-hidden transition-colors duration-300">
       <div className="container mx-auto px-6 md:px-12 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="scroll-reveal text-sm font-sans uppercase tracking-[0.4em] text-accent mb-4 font-bold">
-            A Mentoria
+            O Acompanhamento
           </p>
           <h2 className="scroll-reveal text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-8 lining-nums flex flex-col items-center">
             VIDA LÍRICA
             <span className="italic text-3xl md:text-5xl lg:text-6xl -mt-2 md:-mt-4 text-accent">
-              o acompanhamento
+              um espaço para você
             </span>
           </h2>
           <p className="scroll-reveal text-lg font-body text-muted-foreground leading-relaxed">
-            Um acompanhamento personalizado que integra Corpo, Mente, Emoções e Espírito em uma rotina simples e sustentável.
+            Um processo individual e acolhedor para ajudar você a compreender suas emoções, recuperar clareza e cultivar uma relação mais consciente consigo.
           </p>
         </div>
 
@@ -175,10 +161,10 @@ const MentorshipSection = () => {
             <div className="space-y-4">
               <h3 className="scroll-reveal text-3xl md:text-4xl font-display font-bold text-foreground flex items-center gap-3">
                 <Sparkles className="text-accent w-6 h-6 shrink-0" />
-                O que está incluído
+                Como você será acompanhado
               </h3>
               <p className="scroll-reveal text-lg font-body text-muted-foreground">
-                Uma experiência imersiva projetada para o seu crescimento.
+                Presença, orientação e práticas integrativas adaptadas ao seu momento de vida.
               </p>
             </div>
 
@@ -195,10 +181,10 @@ const MentorshipSection = () => {
 
             <div className="scroll-reveal bg-card backdrop-blur-sm rounded-[2rem] p-8 border border-border shadow-soft">
               <p className="font-display text-xl text-accent font-bold mb-3 italic">
-                ✨ O que nos diferencia
+                ✨ Um cuidado que respeita sua realidade
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Aqui, o autocuidado cria raiz.</strong> Você não precisa ser perfeita. Nem rígida. Muito menos fugir da sua vida. Nosso método integra as 4 dimensões do Ser em uma rotina simples e prática, que sustenta sua versão inteira. Você aprende a viver o que já sabe.
+                <strong className="text-foreground">Você não precisa se tornar outra pessoa para começar a se cuidar.</strong> O acompanhamento integra corpo, mente, emoções e espiritualidade com práticas simples, possíveis e conectadas à sua rotina.
               </p>
             </div>
 
@@ -206,12 +192,17 @@ const MentorshipSection = () => {
               <Button
                 size="lg"
                 className="w-full sm:w-auto h-auto min-h-[64px] py-4 px-10 text-[10px] md:text-xs rounded-full bg-primary text-primary-foreground hover:bg-primary/95 shadow-premium hover:shadow-gold hover:-translate-y-1.5 transition-all duration-500 font-sans uppercase font-bold tracking-[0.3em] group whitespace-normal break-words"
-                onClick={() => scrollToSection("contato")}
+                asChild
               >
-                <span className="flex flex-wrap items-center justify-center gap-3 text-center whitespace-normal break-words">
-                  Quero construir uma vida que me sustenta
+                <a
+                  href="https://form.respondi.app/RhAy0nd6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-wrap items-center justify-center gap-3 text-center whitespace-normal break-words"
+                >
+                  Quero conhecer o acompanhamento
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
+                </a>
               </Button>
             </div>
           </div>

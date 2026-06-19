@@ -56,7 +56,7 @@ const Footer = () => {
               Vida <span className="italic">Lírica</span>
             </button>
             <p className="font-body opacity-80 leading-relaxed text-sm">
-              Um espaço dedicado ao florescimento feminino, integrando corpo, mente, emoção e espírito em uma jornada de inteireza.
+              Um espaço de acolhimento e reconexão interior, integrando corpo, mente, emoções e espiritualidade em um cuidado profundamente humano.
             </p>
             <div className="flex gap-4">
               {socialLinks.map(({ Icon, href, label }) => (
@@ -126,7 +126,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6 scroll-reveal">
           <p className="text-xs font-body opacity-60 text-center md:text-left">
             © {new Date().getFullYear()} Vida Lírica. Todos os direitos reservados.
-            <span className="block sm:inline sm:ml-2">Desenvolvido com amor para mulheres extraordinárias.</span>
+            <span className="block sm:inline sm:ml-2">Cuidado, presença e respeito por cada história.</span>
           </p>
           <div className="flex gap-6 text-[10px] font-sans font-bold uppercase tracking-widest opacity-60">
             <a href="#" className="hover:opacity-100 transition-colors">Política de Privacidade</a>

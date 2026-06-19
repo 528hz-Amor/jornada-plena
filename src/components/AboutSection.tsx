@@ -96,7 +96,7 @@ const AboutSection = () => {
           >
             <div className="space-y-4">
               <p className="scroll-reveal text-sm font-sans uppercase tracking-[0.4em] text-accent font-bold">
-                CONHEÇA SUA MENTORA
+                QUEM ACOMPANHA VOCÊ
               </p>
               <h2 className="scroll-reveal text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight">
                 Prazer, eu sou a <br />
@@ -106,16 +106,16 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-lg font-body text-foreground/80 leading-relaxed">
               <p className="scroll-reveal">
-                Abandonei a cidade de São Paulo, onde nasci e me criei, para viver na roça, no Sul de Minas Gerais - em busca de viver com <strong>Presença, Verdade e Simplicidade</strong>.
+                Minha própria busca por uma vida com mais <strong>Presença, Verdade e Simplicidade</strong> me levou de São Paulo, onde nasci e cresci, para uma vida mais próxima da natureza, no Sul de Minas Gerais.
               </p>
               <p className="scroll-reveal">
-                Sou psicóloga graduada pela PUC-SP, facilitadora de práticas corporais e liberação emocional, cartomante, benzedeira e uma curiosa insaciável.
+                Sou psicóloga formada pela PUC-SP, facilitadora de práticas corporais e de liberação emocional, cartomante e benzedeira. Reúno conhecimentos terapêuticos e integrativos para acolher cada pessoa em sua totalidade.
               </p>
               <p className="scroll-reveal">
-                Estou constantemente encontrando caminhos para integrar o autocuidado à rotina de forma simples e prática.
+                Acredito em um cuidado que respeita o seu tempo, a sua história e a sua realidade. Sem fórmulas prontas, cobranças excessivas ou a necessidade de parecer bem o tempo todo.
               </p>
               <p className="scroll-reveal font-medium text-accent">
-                Minha missão é te apoiar a viver sem performance, se expressar com segurança e enraizar uma rotina que sustente seus sonhos.
+                Meu propósito é oferecer um espaço seguro para você se escutar, compreender suas emoções e encontrar caminhos possíveis para viver com mais inteireza.
               </p>
             </div>
 
@@ -127,14 +127,14 @@ const AboutSection = () => {
               </div>
               <div className="scroll-reveal text-center border-l border-border">
                 <p className="text-4xl md:text-5xl font-display font-bold text-accent">100</p>
-                <p className="text-[10px] md:text-xs font-sans uppercase tracking-widest opacity-60 mt-2">vidas impactadas</p>
+                <p className="text-[10px] md:text-xs font-sans uppercase tracking-widest opacity-60 mt-2">pessoas alcançadas</p>
               </div>
             </div>
 
             {/* Values - Circular/Organic approach */}
             <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
               {[
-                "Integração", "Autenticidade", "Autocuidado", "Presença", "Simplicidade"
+                "Acolhimento", "Integração", "Autenticidade", "Presença", "Simplicidade"
               ].map((value, i) => (
                 <div key={i} className="scroll-reveal px-6 py-2 rounded-full border border-accent/20 bg-accent/5 text-accent text-sm font-sans font-bold uppercase tracking-widest">
                   {value}
